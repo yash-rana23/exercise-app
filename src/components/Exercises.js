@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material';
 
@@ -11,7 +11,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [exercisesPerPage] = useState(6);
 
   useEffect(() => {
-    const fetchExercisesData = useCallback( async () => {
+    const fetchExercisesData = async () => {
       let exercisesData = [];
 
       if (bodyPart === 'all') {
@@ -21,7 +21,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       }
 
       setExercises(exercisesData);
-    });
+    };
 
     fetchExercisesData();
   }, [bodyPart]);
