@@ -21,7 +21,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       }
 
       setExercises(exercisesData);
-    });
+    },[]);
  useEffect(() => {
    fetchExercisesData()
  }, [bodyPart]);
